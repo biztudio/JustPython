@@ -9,6 +9,6 @@
 7. TDD\BDD 设计开发练习
 
 
-Python 的代码规范参考：
 
-![pythonstyle](./codestyleguide.png)
+
+![Python 的代码规范参考：](https://github.com/biztudio/JustPython/blob/syntaxlab/codestyleguide.PNG)
