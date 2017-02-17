@@ -1,28 +1,30 @@
 # coding: UTF-8
-import string
 import os
 
 
 class AssemblyReader:
     def __init__(self, assembly_file):
         self.file = assembly_file
-
-# @staticmethod
-    def check_existence(self, file_location):
-        return os.path.isfile(file_location)
+        self.assembly_version = ''
 
     def get_assembly_version(self):
-        if self.check_existence(self.file):
-            with open(self.file, 'r') as file:
-                [print(line.strip(string.punctuation)) for line in file.readlines()]
-
-                return ''
-        else:
-            print(self.file + ' can not be located')
-            return ''
+        if os.path.isfile(self.file):
+            with open(self.file, 'r', encoding='utf8') as file:  # 加上encoding='utf8'才能确保读取文件时正确处理版本字符 ©
+                # for line in file.readlines():
+                for line in file:  # 相较于readlines, 迭代占用更小的内存，而且更加智能（依赖于Python文件对象的实现），所需文件内容是自动从buffer中按照需要读取
+                    find_flag = line.strip().replace(' ', '').find('[assembly:AssemblyVersion(')
+                    if find_flag >= 0 > line.strip().find('//'):  # 过滤单行注释文本, 本行布尔判断的写法很好玩
+                        self.assembly_version = line.split('"')[1]
+        return self.assembly_version
 
 
 assembly_reader = AssemblyReader('AssemblyInfo.cs')
-print(assembly_reader.check_existence('AssemblyInfo.cs'))
 version = assembly_reader.get_assembly_version()
 print(version)
+
+'''本方法有个缺陷，即对于多行注释中的文本无法过滤
+   形如：
+   /*
+    [assembly: AssemblyVersion("1.0.*")]
+   */
+'''
