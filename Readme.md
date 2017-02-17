@@ -7,3 +7,8 @@
 5. 算法练习
 6. 设计模式练习
 7. TDD\BDD 设计开发练习
+
+
+Python 的代码规范参考：
+
+![pythonstyle](./codestyleguide.png)
