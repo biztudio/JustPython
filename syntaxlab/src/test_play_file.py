@@ -10,7 +10,7 @@ class TestAssemblyReader(unittest.TestCase):
         self.assertEqual(version, '7.3.1.0210')
 
     def test_version_writer(self):
-        new_version = '7.3.1.0220'
+        new_version = '7.3.1.0228'
         assembly_writer = play_file.AssemblyWriter()
         version = assembly_writer.update_assembly_version('AssemblyInfo.cs', new_version)
         self.assertEqual(version, new_version)

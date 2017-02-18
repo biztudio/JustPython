@@ -25,8 +25,8 @@ class AssemblyWriter(AssemblyReader):
             for line in fileinput.input(self.file, inplace=True):
                 if re.search(current_version, line):
                     line = line.replace(current_version, new_version)
-                    self.assembly_version = new_version
                 print(line.replace('\n',''))
+            self.assembly_version = new_version
         return self.assembly_version
 
 '''本方法有个缺陷，即对于多行注释中的文本无法过滤
