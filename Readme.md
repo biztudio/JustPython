@@ -2,7 +2,7 @@
 
 1. Python爬虫
 2. Python SNMP编程.
-3. Flask Web 程序进行考勤和评价
+3. Flask Web 博客
 4. Flask Web SNMP简单设备管理（含RESTFul API）
 5. 算法练习
 6. 设计模式练习
