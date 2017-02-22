@@ -4,6 +4,20 @@ import fileinput
 import re
 
 
+class TextReplacer:
+    def __init__(self):
+        self.file = ''
+
+    def replace_text_in_file(self, file_location = '', text_current = '', text_new = ''):
+       self.file = file_location
+       print('Plan to change ' ,text_current, ' to ',text_new)
+       if os.path.isfile(self.file):
+           for line in fileinput.input(self.file, inplace=True):
+                if re.search(text_current, line):                    
+                    line = line.replace(text_current, text_new)
+                print(line.replace('\n',''))     
+
+
 class AssemblyReader:
     def __init__(self):
         self.file = ''
@@ -35,3 +49,6 @@ class AssemblyWriter(AssemblyReader):
     [assembly: AssemblyVersion("1.0.*")]
    */
 '''
+
+
+           
