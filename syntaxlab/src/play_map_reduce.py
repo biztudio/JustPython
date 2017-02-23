@@ -53,7 +53,7 @@ print(names_list3)
 
 # 练习二，把练习一中大小写规范好的名字列表姓氏(最后一个词作为姓氏)分组, 组名就是姓氏
 # 形如 {'Jobs':['Steven Jobs'], 'Zhang':['Robin Zhang','Jack Zhang'] ... }
-
+# ref to play_collection.py
 
 
 
