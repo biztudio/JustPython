@@ -25,6 +25,7 @@ def get_names_group(names_list):
     names_group = {}
     for fname in {name.split(' ')[-1] for name in set(names_list)}:
         names_group[fname] = {name for name in names_list if name.split(' ')[-1] == fname}
+        # [x[0] for x in zip(a,a[1:]+[None]) if x!=(0,2)]
     return names_group
 
 
