@@ -22,10 +22,11 @@ def get_normalize_names(names_list):
 
 
 def get_names_group(names_list):
+    name_set = set(names_list)
     names_group = {}
-    for fname in {name.split(' ')[-1] for name in set(names_list)}:
-        names_group[fname] = {name for name in names_list if name.split(' ')[-1] == fname}
-        # [x[0] for x in zip(a,a[1:]+[None]) if x!=(0,2)]
+    for fname in {name.split(' ')[-1] for name in name_set}:
+        names_group[fname] = {name for name in name_set if name.split(' ')[-1] == fname}
+        {name_set.remove(name) for name in names_group[fname]}
     return names_group
 
 
