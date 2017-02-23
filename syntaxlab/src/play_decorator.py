@@ -10,6 +10,13 @@ def v_function_decorator(func):
     print('v_function_decorator calls %s():' % func.__name__)
     return func
 
+# 在 Python 中，接收函数作为入参的函数叫做高阶函数
+def add(x, y, f):
+    return f(x) + f(y)
+
+
+print(add(-5, 6, abs))
+
 
 # decorator中使用嵌套函数，在嵌套函数中进行装饰，以保证每次调用函数Function都会调用wrapper函数，起到了装饰器的作用
 def log(func):
