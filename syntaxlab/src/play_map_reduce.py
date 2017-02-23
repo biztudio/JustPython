@@ -20,8 +20,7 @@ def fn(x, y):
 
 reduce(fn, [1, 3, 5, 7, 9])
 
-# 练习一，把一组大小写不规范的名字转成首字母大写的一组名字，并按姓氏(最后一个词作为姓氏)分组, 组名就是姓氏,
-# 形如 {'Jobs':['Steven Jobs'], 'Zhang':['Robin Zhang','Jack Zhang'] ... }
+# 练习一，把一组大小写不规范的名字转成首字母大写的一组名字
 names_list1 = ['sTevEn JOBs',
                'coCo lee',
                'JAck zhaNG',
@@ -42,9 +41,9 @@ def normalize_name(abnormal_name):
     return reduce(lambda n1, n2: n1+' '+n2, list(map(lambda n: n[0].upper()+n[1:].lower(), abnormal_name.split(' '))))
 
 
-# 由于设计原因，在python 3 很多场景其实推荐使用直接的 for 循环替代 map / reduce
-def normalize_name_via_loop(abnormal_name_list):
-    return [' '.join([name[0].upper() + name[1:].lower() for name in abnormal_name.split(' ')]) for abnormal_name in abnormal_name_list]
+# 由于设计原因，在python 3 很多场景其实推荐使用直接的推导式替代 map / reduce
+def normalize_name_via_loop(abnormal_names):
+    return [' '.join([n[0].upper() + n[1:].lower() for n in name.split(' ')]) for name in abnormal_names]
 
 names_list2 = list(map(normalize_name, names_list1))
 print(names_list2)
@@ -52,8 +51,14 @@ names_list3 = normalize_name_via_loop(names_list1)
 print(names_list3)
 
 
+# 练习二，把练习一中大小写规范好的名字列表姓氏(最后一个词作为姓氏)分组, 组名就是姓氏
+# 形如 {'Jobs':['Steven Jobs'], 'Zhang':['Robin Zhang','Jack Zhang'] ... }
+
+
+
 
 
 
 # reduce 具有一定的局限性，所以在 python3 中被从内建库取消了 http://www.artima.com/weblogs/viewpost.jsp?thread=98196
+# reduce 在python3 中被迁移到 functools
 # 其对于 + 或者 * 运算还是十分方便的
