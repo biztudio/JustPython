@@ -1,4 +1,5 @@
 from functools import reduce
+import play_collection
 
 
 # Ref: MapReduce: Simplified Data Processing on Large Clusters (by Google)

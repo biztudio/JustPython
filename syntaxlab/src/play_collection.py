@@ -30,12 +30,15 @@ def get_names_group(names_list):
     return names_group
 
 
+
+
+'''
 names_list2 = get_normalize_names(names_list1)
 names_grouped = get_names_group(names_list2)
 print(names_list1)
 print(names_list2)
 print(names_grouped)
 print(names_grouped['Shen'])
-
+'''
 
 

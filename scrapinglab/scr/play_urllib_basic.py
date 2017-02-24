@@ -6,15 +6,17 @@ from urllib import request
 url = 'https://movie.douban.com/top250'
 
 '''sometimes we need proxy to access internet
-proxy = request.ProxyHandler({'http': 'biztudio.github.io:80'})
-opener = request.build_opener(proxy)
-request.install_opener(opener)
+
+proxies = {"http": "http://ys1003:UTdba@12@sdcwsa01.commscope.com:80"}
+proxy_support = request.ProxyHandler(proxies)
+opener = urllib.request.build_opener(proxy_support)
+urllib.request.install_opener(opener)
 '''
 
 data = request.urlopen(url).read()
 data = data.decode('UTF-8')
 # set an object of regular expression
-info_pattern = re.compile('<span class="title">\w*</span>')
+info_pattern = re.compile('<span class="title">')
 for x in info_pattern.findall(data):
     print(x)
 
