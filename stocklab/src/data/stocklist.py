@@ -23,8 +23,10 @@ class StockListFromEastMoney:
         return [(stock['href'][-11:-5], stock.text, stock['href']) for stock in BeautifulSoup(content, 'html.parser').find_all(self.find_stock_link_items)]
 
 
-
-
+if __name__ == '__main__':
+    fetch = StockListFromEastMoney()
+    stock_list = fetch.fetch_stock_list()
+    print(stock_list)
 
 # requests 中文乱码
 # http://www.zhetenga.com/view/python%E7%9A%84requests%E7%B1%BB%E6%8A%93%E5%8F%96%E4%B8%AD%E6%96%87%E9%A1%B5%E9%9D%A2%E5%87%BA%E7%8E%B0%E4%B9%B1%E7%A0%81-0abbaa140.html
