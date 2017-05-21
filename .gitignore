@@ -1,3 +1,5 @@
+flask/
+
 *.iml
 /local.properties
 /.idea/workspace.xml

@@ -31,6 +31,13 @@ Flask非常适合于开发RESTful API，因为它具有以下特点：
 
 默认的类型为字符串。
 
+
+基于 Flask 还有个 Flask_restful 可专门用于 RESTful API 的开发
+
+安装：pip install flask-restful
+
+
+
 参考资料：
 
 * [使用Flask实现RESTful API](http://www.jianshu.com/p/f3624eebff80)
