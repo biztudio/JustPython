@@ -14,5 +14,5 @@ def api_articles():
 def api_article(articleid):
     return 'You are reading ' + articleid
 
-if __name__ == '__main__':
-    app.run(debug=True)
+#if __name__ == '__main__':
+#    app.run(debug=True)
